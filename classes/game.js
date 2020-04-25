@@ -6,13 +6,13 @@ function Game(id, title, description, imageUrl){
 }
 
 Game.prototype.show = function(){
-    var container1 = document.querySelector('.container');
     const gameELement = document.createElement("div");
     gameELement.setAttribute("id", this._id)
+    gameELement.setAttribute('class', 'gameELement')
     gameELement.innerHTML = `<h1>${this.title}</h1> 
                             <img src="${this.imageUrl}" />
                             <p>${this.description}</p> 
                             <button class="delete-btn">Delete Game</button>
                             <button class="edit-btn">Edit Game</button>`;
-    return container1.appendChild(gameELement);
+    return gameELement;
 }
