@@ -1,4 +1,4 @@
-function createGameForm(title, releaseDate, genre, publisher, imageUrl, description) {
+function CreateGameForm(title, releaseDate, genre, publisher, imageUrl, description) {
     this.title = title;
     this.releaseDate = releaseDate;
     this.genre = genre;
@@ -7,7 +7,7 @@ function createGameForm(title, releaseDate, genre, publisher, imageUrl, descript
     this.description = description;
 }
 
-createGameForm.prototype.validateFormElement = function(inputElement, errorMessage) {
+CreateGameForm.prototype.validateFormElement = function(inputElement, errorMessage) {
     if(inputElement.value === "") {
         if(!document.querySelector('[rel="' + inputElement.id + '"]')){
             buildErrorMessage(inputElement, errorMessage);
@@ -21,13 +21,13 @@ createGameForm.prototype.validateFormElement = function(inputElement, errorMessa
     } 
 }
 
-createGameForm.prototype.validateReleaseTimestampElement = function (inputElement, errorMessage){
+CreateGameForm.prototype.validateReleaseTimestampElement = function (inputElement, errorMessage){
     if(isNaN(inputElement.value) && inputElement.value !== "") {
         buildErrorMessage(inputElement, errorMessage);
     }
 }
 
-createGameForm.prototype.buildErrorMessage = function (inputEl, errosMsg){
+CreateGameForm.prototype.buildErrorMessage = function (inputEl, errosMsg){
     inputEl.classList.add("inputError");
     const errorMsgElement = document.createElement("span");
     errorMsgElement.setAttribute("rel", inputEl.id);
@@ -36,7 +36,7 @@ createGameForm.prototype.buildErrorMessage = function (inputEl, errosMsg){
     inputEl.after(errorMsgElement);
 }
 
-createGameForm.prototype.displayCreatedGame = function(request) {
+CreateGameForm.prototype.displayCreatedGame = function(request) {
     const gameELement = document.createElement("div");
     gameELement.setAttribute("id", `${request._id}`)
     gameELement.setAttribute('class', 'gameELement')

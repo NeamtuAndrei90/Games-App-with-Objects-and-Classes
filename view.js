@@ -67,7 +67,7 @@ function removeDeletedElementFromDOM(domElement){
 
 document.querySelector(".submitBtn").addEventListener("click", function(event){
     event.preventDefault();
-    const newGame = new createGameForm(document.getElementById("gameTitle"),
+    const newGame = new CreateGameForm(document.getElementById("gameTitle"),
                                         document.getElementById("gameDescription"),
                                         document.getElementById("gameGenre"),
                                         document.getElementById("gamePublisher"),
